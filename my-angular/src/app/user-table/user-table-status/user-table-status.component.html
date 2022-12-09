@@ -1,0 +1,3 @@
+<mat-select (selectionChange)="onChange($event)" [(ngModel)]="defaultSelect" class="select-status">
+  <mat-option *ngFor="let id of ids" value="{{ id }}"> {{ statuses[id] }} </mat-option>
+</mat-select>

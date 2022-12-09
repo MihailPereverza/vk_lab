@@ -1,0 +1,21 @@
+.register-input {
+  min-width: 150px;
+  width: 100%;
+}
+
+.birthday-input {
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+.table-input {
+  display: block;
+}
+
+.register-table {
+  table-layout: fixed;
+}
+
+.register-table td {
+  vertical-align: top;
+}

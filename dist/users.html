@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Пользователь</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<!--    <link rel="stylesheet" href="css/users.css">-->
+<script defer src="users.js"></script></head>
+<body>
+<div class="container">
+    <div class="header">
+        <p id="back-button">Все пользователи</p>
+        <h1 id="userName"></h1>
+    </div>
+    <p>Роль: <span id="role"></span></p>
+    <p>Статус: <span id="status"></span></p>
+    <p class="user-label">Друзья пользователя</p>
+    <table id="users">
+        <tr>
+            <th>ID</th>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Отчество</th>
+            <th>День рождения</th>
+            <th>Статус</th>
+            <th>Роль</th>
+            <!--            <th-->
+        </tr>
+    </table>
+    <p class="user-label">Новости пользователя</p>
+    <table id="news">
+        <tr>
+            <th>ID</th>
+            <th>Дата</th>
+            <th>Пользователь</th>
+            <th>Текст</th>
+            <!--            <th-->
+        </tr>
+    </table>
+</div>
+<!--<script src="js/users.js"></script>-->
+</body>
+</html>

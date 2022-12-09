@@ -1,0 +1,26 @@
+@import "helpers/mixins";
+@import "helpers/usersTable";
+@import "helpers/newsTable";
+@import "helpers/consts";
+@import "helpers/body";
+
+
+.user-label {
+  margin-top: 70px;
+  margin-bottom: 10px;
+  text-align:center;
+  font-size: 30px;
+}
+
+.header {
+  .flex(@jc: space-between);
+
+  #userName {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  #back-button {
+    .button()
+  }
+}

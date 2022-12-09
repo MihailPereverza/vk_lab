@@ -1,0 +1,55 @@
+.flex(@jc: center, @ai: stretch) {
+  display: flex;
+  justify-content: @jc;
+  align-items: @ai;
+}
+
+
+.table(@weight, @color, @between) {
+  margin: 0 auto;
+  border-collapse: collapse;
+
+  & th, td {
+    border-right: @weight solid @color;
+    padding: 0 @between;
+
+    &:first-child{
+      padding-left: 0;
+    }
+    &:last-child {
+      border-right: 0;
+      padding-right: 0;
+    }
+
+  }
+}
+
+.button(@fw: 500, @brw: 2px, @br: 20px, @padding: 5px, @hvc: #fff, @hvb: #000) {
+  font-family: "Roboto", sans-serif;
+  font-weight: @fw;
+  background: transparent;
+  transition: all 0.3s ease;
+  outline: none !important;
+  border: @brw solid @hvb;
+  border-radius: @br;
+  padding: @padding;
+
+  &:hover {
+    color: @hvc;
+    background: @hvb;
+  }
+  &:hover:after {
+    left: auto;
+    right: 0;
+    width: 100%;
+  }
+  &:active {
+    top: 2px;
+  }
+}
+
+.active-hover() {
+  &:hover {
+
+  }
+}

@@ -1,0 +1,46 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #DBD7D2;
+  color: black;
+}
+body .container {
+  width: 80%;
+}
+#users,
+#news {
+  border-collapse: collapse;
+}
+#users td,
+th {
+  border-right: 1px solid black;
+  margin: 0;
+  padding: 0 10px;
+}
+#users td:first-child,
+th:first-child {
+  padding-left: 0;
+}
+#users td:last-child,
+th:last-child,
+#users td:nth-last-child(2),
+th:nth-last-child(2) {
+  border-right: 0;
+  padding-right: 0;
+}
+#news td,
+th {
+  border-right: 1px solid black;
+  padding: 0 10px;
+}
+#news td:first-child,
+th:first-child {
+  padding-left: 0;
+}
+#news td:last-child,
+th:last-child {
+  border-right: 0;
+  padding-right: 0;
+}
+/*# sourceMappingURL=usersTable.css.map */

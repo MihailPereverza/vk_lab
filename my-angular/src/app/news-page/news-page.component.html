@@ -1,0 +1,64 @@
+<div class="container">
+  <button (click)="goToAdministration()" mat-button *ngIf="user?.isAdministrator">Модуль администрирования</button>
+<p class="user-name">Новости пользователя: {{userName}}</p>
+
+  <table mat-table [dataSource]="news" class="full-width-table user-table" matSort aria-label="Elements">
+    <!-- FirstName Column -->
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef> Имя </th>
+      <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+    </ng-container>
+
+    <!-- LastName Column -->
+    <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef> Фамилия </th>
+      <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+    </ng-container>
+
+    <!-- Text Column -->
+    <ng-container matColumnDef="text">
+      <th mat-header-cell *matHeaderCellDef> Текст </th>
+      <td mat-cell *matCellDef="let element"> {{element.text}} </td>
+    </ng-container>
+
+    <!-- Date Column -->
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef> Дата </th>
+      <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+<!--  <mat-paginator-->
+<!--    [length]="newsSize"-->
+<!--    [pageSizeOptions]="[5, 10, 20]"-->
+<!--    showFirstLastButtons>-->
+
+<!--  </mat-paginator>-->
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="card">
+    <div class="card-content">
+      <span class="card-title">Создать новый пост</span>
+      <div class="input-field">
+        <input id="text" type="text" formControlName="text"
+               [ngClass]="{'invalid': form.get('text')?.invalid && form.get('text')?.touched}"
+        >
+        <label for="text">Text:</label>
+        <span
+          class="helper-text red-text"
+          *ngIf="form.get('text')?.invalid && form.get('text')?.touched"
+        >
+        Error
+      </span>
+      </div>
+    </div>
+    <div class="card-action">
+      <button type="submit" class="modal-action btn waves-effect" [disabled]="form.invalid || form.disabled">Отправить</button>
+    </div>
+  </form>
+
+</div>
+

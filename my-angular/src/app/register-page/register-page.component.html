@@ -1,0 +1,48 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="card">
+  <div class="card-content">
+    <span class="card-title">Создать аккаунт</span>
+
+<!--    email input-->
+    <mat-form-field class="register-input">
+      <input matInput placeholder="Email" formControlName="email"
+             [ngClass]="{'invalid': form.get('email')?.invalid && form.get('email')?.touched}">
+    </mat-form-field>
+
+<!--      fio input-->
+    <table class="register-table" cellspacing="0"><tr>
+      <td>
+        <mat-form-field class="register-input">
+          <input class="table-input" matInput placeholder="First name" formControlName="firstName"
+                 [ngClass]="{'invalid': form.get('firstName')?.invalid && form.get('firstName')?.touched}">
+        </mat-form-field>
+        <mat-form-field class="register-input">
+          <input class="table-input" matInput placeholder="Patronymic" formControlName="patronymic"
+                 [ngClass]="{'invalid': form.get('patronymic')?.invalid && form.get('patronymic')?.touched}">
+        </mat-form-field>
+      </td>
+      <td><mat-form-field class="register-input">
+        <input matInput placeholder="Last Name" formControlName="lastName"
+               [ngClass]="{'invalid': form.get('lastName')?.invalid && form.get('lastName')?.touched}">
+      </mat-form-field></td>
+    </tr></table>
+
+<!--    birthday input-->
+  <mat-form-field class="birthday-input">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="birthday"
+           [ngClass]="{'invalid': form.get('birthday')?.invalid && form.get('birthday')?.touched}">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+<!--    password input-->
+  <mat-form-field class="register-input">
+    <input matInput type="password" placeholder="password" formControlName="password"
+           [ngClass]="{'invalid': form.get('password')?.invalid && form.get('password')?.touched}">
+  </mat-form-field>
+  </div>
+  <div class="card-action">
+    <button class="modal-action btn waves-effect">Создать</button>
+  </div>
+</form>

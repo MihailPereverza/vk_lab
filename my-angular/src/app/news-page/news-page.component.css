@@ -1,0 +1,24 @@
+.news-list {
+  /*display: flex;*/
+  text-align: center;
+  justify-content: space-between;
+}
+
+.user-name {
+  font-size: 18px;
+  /*padding-left: 30px;*/
+}
+
+.container {
+  padding-top: 20px;
+  max-width: 80%;
+}
+
+.left {
+  /*text-align: left;*/
+}
+/**/
+.right {
+  padding: 0 100px;
+  /*text-align: right;*/
+}

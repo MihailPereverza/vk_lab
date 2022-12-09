@@ -1,0 +1,19 @@
+@import "consts";
+@import "mixins";
+
+
+#users {
+  .table(1px, @font-color, @table-between);
+
+  & th, td {
+    &:nth-last-child(2) {
+      border-right: 0;
+      padding-right: 0;
+    }
+  }
+
+  & tr:not(:first-child):hover {
+    transform: translateX(1px) translateY(-1px) scale(1.02);
+  }
+
+}
